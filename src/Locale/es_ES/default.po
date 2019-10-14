@@ -1,0 +1,376 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-08-29 19:51+0000\n"
+"PO-Revision-Date: 2019-10-11 16:07-0400\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#: Controller/AssetsController.php:83;108
+msgid "The asset has been saved."
+msgstr "El activo ha sido guardado."
+
+#: Controller/AssetsController.php:87;112
+msgid "The asset could not be saved. Please, try again."
+msgstr "El activo no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/AssetsController.php:130
+msgid "The asset has been deleted."
+msgstr "El activo ha sido eliminado."
+
+#: Controller/AssetsController.php:132
+msgid "The asset could not be deleted. Please, try again."
+msgstr "El activo no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/EventsController.php:68;92
+msgid "The event has been saved."
+msgstr "El evento ha sido guardado."
+
+#: Controller/EventsController.php:72;96
+msgid "The event could not be saved. Please, try again."
+msgstr "El evento no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/EventsController.php:113
+msgid "The event has been deleted."
+msgstr "El evento ha sido eliminado."
+
+#: Controller/EventsController.php:115
+msgid "The event could not be deleted. Please, try again."
+msgstr "El evento no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/TagsController.php:55;80
+msgid "The tag has been saved."
+msgstr "La etiqueta ha sido guardada."
+
+#: Controller/TagsController.php:59;84
+msgid "The tag could not be saved. Please, try again."
+msgstr "La etiqueta no se pudo guardar. Inténtalo de nuevo."
+
+#: Controller/TagsController.php:102
+msgid "The tag has been deleted."
+msgstr "La etiqueta ha sido eliminada."
+
+#: Controller/TagsController.php:104
+msgid "The tag could not be deleted. Please, try again."
+msgstr "La etiqueta no se pudo eliminar. Inténtalo de nuevo."
+
+#: Controller/UsersController.php:73;96
+msgid "The user has been saved."
+msgstr "El usuario ha sido guardado."
+
+#: Controller/UsersController.php:77;100
+msgid "The user could not be saved. Please, try again."
+msgstr "El usuario no pudo ser salvado. Inténtalo de nuevo."
+
+#: Controller/UsersController.php:116
+msgid "The user has been deleted."
+msgstr "El usuario ha sido eliminado."
+
+#: Controller/UsersController.php:118
+msgid "The user could not be deleted. Please, try again."
+msgstr "El usuario no pudo ser eliminado. Inténtalo de nuevo."
+
+#: Template/Assets/add.ctp:9 Template/Assets/edit.ctp:9
+#: Template/Assets/index.ctp:9;30 Template/Assets/view.ctp:9;67;96
+#: Template/Events/add.ctp:9 Template/Events/edit.ctp:9
+#: Template/Events/index.ctp:9;25 Template/Events/view.ctp:9
+#: Template/Tags/add.ctp:9 Template/Tags/edit.ctp:9
+#: Template/Tags/index.ctp:9;24 Template/Tags/view.ctp:9;51
+#: Template/Users/add.ctp:9 Template/Users/edit.ctp:9
+#: Template/Users/index.ctp:9;23 Template/Users/view.ctp:9;55
+msgid "Actions"
+msgstr "Comportamiento"
+
+#: Template/Assets/add.ctp:10 Template/Assets/edit.ctp:15
+#: Template/Assets/view.ctp:12 Template/Events/add.ctp:11
+#: Template/Events/edit.ctp:17 Template/Events/index.ctp:11
+#: Template/Events/view.ctp:14 Template/Tags/add.ctp:11
+#: Template/Tags/edit.ctp:17 Template/Tags/index.ctp:11
+#: Template/Tags/view.ctp:14 Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:17 Template/Users/index.ctp:11
+#: Template/Users/view.ctp:14
+msgid "List Assets"
+msgstr "Lista de activos"
+
+#: Template/Assets/add.ctp:11 Template/Assets/edit.ctp:16
+#: Template/Assets/index.ctp:11 Template/Assets/view.ctp:14
+#: Template/Users/add.ctp:10 Template/Users/edit.ctp:16
+#: Template/Users/view.ctp:12
+msgid "List Users"
+msgstr "Lista de usuarios"
+
+#: Template/Assets/add.ctp:12 Template/Assets/edit.ctp:17
+#: Template/Assets/index.ctp:12 Template/Assets/view.ctp:15
+#: Template/Users/index.ctp:10 Template/Users/view.ctp:13
+msgid "New User"
+msgstr "Nuevo Usuario"
+
+#: Template/Assets/add.ctp:13 Template/Assets/edit.ctp:18
+#: Template/Assets/index.ctp:13 Template/Assets/view.ctp:16
+#: Template/Events/add.ctp:10 Template/Events/edit.ctp:16
+#: Template/Events/view.ctp:12
+msgid "List Events"
+msgstr "Lista de eventos"
+
+#: Template/Assets/add.ctp:14 Template/Assets/edit.ctp:19
+#: Template/Assets/index.ctp:14 Template/Assets/view.ctp:17
+#: Template/Events/index.ctp:10 Template/Events/view.ctp:13
+msgid "New Event"
+msgstr "Nuevo evento"
+
+#: Template/Assets/add.ctp:15 Template/Assets/edit.ctp:20
+#: Template/Assets/index.ctp:15 Template/Assets/view.ctp:18
+#: Template/Tags/add.ctp:10 Template/Tags/edit.ctp:16 Template/Tags/view.ctp:12
+msgid "List Tags"
+msgstr "Etiquetas de lista"
+
+#: Template/Assets/add.ctp:16 Template/Assets/edit.ctp:21
+#: Template/Assets/index.ctp:16 Template/Assets/view.ctp:19
+#: Template/Tags/index.ctp:10 Template/Tags/view.ctp:13
+msgid "New Tag"
+msgstr "Nueva etiqueta"
+
+#: Template/Assets/add.ctp:22
+msgid "Add Asset"
+msgstr "Agregar activo"
+
+#: Template/Assets/add.ctp:32 Template/Assets/edit.ctp:37
+#: Template/Events/add.ctp:25 Template/Events/edit.ctp:31
+#: Template/Tags/add.ctp:24 Template/Tags/edit.ctp:30 Template/Users/add.ctp:24
+#: Template/Users/edit.ctp:30
+msgid "Submit"
+msgstr "Enviar"
+
+#: Template/Assets/edit.ctp:12 Template/Assets/index.ctp:45
+#: Template/Assets/view.ctp:78;109 Template/Events/edit.ctp:11
+#: Template/Events/index.ctp:39 Template/Tags/edit.ctp:11
+#: Template/Tags/index.ctp:37 Template/Tags/view.ctp:66
+#: Template/Users/edit.ctp:11 Template/Users/index.ctp:35
+#: Template/Users/view.ctp:70
+msgid "Delete"
+msgstr "Eliminar"
+
+#: Template/Assets/edit.ctp:12 Template/Assets/index.ctp:45
+#: Template/Assets/view.ctp:11;78;109 Template/Events/edit.ctp:13
+#: Template/Events/index.ctp:39 Template/Events/view.ctp:11
+#: Template/Tags/edit.ctp:13 Template/Tags/index.ctp:37
+#: Template/Tags/view.ctp:11;66 Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:35 Template/Users/view.ctp:11;70
+msgid "Are you sure you want to delete # {0}?"
+msgstr "¿Está seguro de que desea eliminar # {0} ?"
+
+#: Template/Assets/edit.ctp:27 Template/Assets/view.ctp:10
+msgid "Edit Asset"
+msgstr "Editar activo"
+
+#: Template/Assets/index.ctp:10 Template/Assets/view.ctp:13
+#: Template/Events/add.ctp:12 Template/Events/edit.ctp:18
+#: Template/Events/index.ctp:12 Template/Events/view.ctp:15
+#: Template/Tags/add.ctp:12 Template/Tags/edit.ctp:18
+#: Template/Tags/index.ctp:12 Template/Tags/view.ctp:15
+#: Template/Users/add.ctp:12 Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:12 Template/Users/view.ctp:15
+msgid "New Asset"
+msgstr "Nuevo activo"
+
+#: Template/Assets/index.ctp:20
+msgid "Assets"
+msgstr "Bienes"
+
+#: Template/Assets/index.ctp:43 Template/Assets/view.ctp:76;107
+#: Template/Events/index.ctp:37 Template/Tags/index.ctp:35
+#: Template/Tags/view.ctp:64 Template/Users/index.ctp:33
+#: Template/Users/view.ctp:68
+msgid "View"
+msgstr "Ver"
+
+#: Template/Assets/index.ctp:44 Template/Assets/view.ctp:77;108
+#: Template/Events/index.ctp:38 Template/Tags/index.ctp:36
+#: Template/Tags/view.ctp:65 Template/Users/index.ctp:34
+#: Template/Users/view.ctp:69
+msgid "Edit"
+msgstr "Editar"
+
+#: Template/Assets/index.ctp:53 Template/Events/index.ctp:47
+#: Template/Tags/index.ctp:45 Template/Users/index.ctp:43
+msgid "first"
+msgstr "primero"
+
+#: Template/Assets/index.ctp:54 Template/Events/index.ctp:48
+#: Template/Tags/index.ctp:46 Template/Users/index.ctp:44
+msgid "previous"
+msgstr "anterior"
+
+#: Template/Assets/index.ctp:56 Template/Events/index.ctp:50
+#: Template/Tags/index.ctp:48 Template/Users/index.ctp:46
+msgid "next"
+msgstr "próximo"
+
+#: Template/Assets/index.ctp:57 Template/Events/index.ctp:51
+#: Template/Tags/index.ctp:49 Template/Users/index.ctp:47
+msgid "last"
+msgstr "último"
+
+#: Template/Assets/index.ctp:59 Template/Events/index.ctp:53
+#: Template/Tags/index.ctp:51 Template/Users/index.ctp:49
+msgid ""
+"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
+"total"
+msgstr "Página {{page}} de {{pages}}, que muestra {{current}} registro (s) del {{count}} total"
+
+#: Template/Assets/view.ctp:11
+msgid "Delete Asset"
+msgstr "Eliminar activo"
+
+#: Template/Assets/view.ctp:26
+msgid "User"
+msgstr "Usuario"
+
+#: Template/Assets/view.ctp:30;64 Template/Tags/view.ctp:22;45
+#: Template/Users/view.ctp:49
+msgid "Title"
+msgstr "Título"
+
+#: Template/Assets/view.ctp:34 Template/Tags/view.ctp:46
+#: Template/Users/view.ctp:50
+msgid "Slug"
+msgstr "Babosa"
+
+#: Template/Assets/view.ctp:38;63;90 Template/Events/view.ctp:30
+#: Template/Tags/view.ctp:26;43 Template/Users/view.ctp:30;47
+msgid "Id"
+msgstr "Carné de identidad"
+
+#: Template/Assets/view.ctp:42;65;94 Template/Events/view.ctp:34
+#: Template/Tags/view.ctp:30;49 Template/Users/view.ctp:34;53
+msgid "Created"
+msgstr "Creado"
+
+#: Template/Assets/view.ctp:46;66;95 Template/Events/view.ctp:38
+#: Template/Tags/view.ctp:34;50 Template/Users/view.ctp:38;54
+msgid "Modified"
+msgstr "Modificado"
+
+#: Template/Assets/view.ctp:50 Template/Tags/view.ctp:48
+#: Template/Users/view.ctp:52
+msgid "Published"
+msgstr "Publicado"
+
+#: Template/Assets/view.ctp:51
+msgid "Yes"
+msgstr "si"
+
+#: Template/Assets/view.ctp:51
+msgid "No"
+msgstr "No"
+
+#: Template/Assets/view.ctp:55 Template/Tags/view.ctp:47
+#: Template/Users/view.ctp:51
+msgid "Body"
+msgstr "Cuerpo"
+
+#: Template/Assets/view.ctp:59
+msgid "Related Tags"
+msgstr "Etiquetas Relacionadas"
+
+#: Template/Assets/view.ctp:86
+msgid "Related Events"
+msgstr "Eventos relacionados"
+
+#: Template/Assets/view.ctp:91
+msgid "Asset Id"
+msgstr "ID de activo"
+
+#: Template/Assets/view.ctp:92 Template/Events/view.ctp:26
+msgid "Name"
+msgstr "Nombre"
+
+#: Template/Assets/view.ctp:93 Template/Events/view.ctp:43
+msgid "Event"
+msgstr "Evento"
+
+#: Template/Events/add.ctp:18
+msgid "Add Event"
+msgstr "Añadir evento"
+
+#: Template/Events/edit.ctp:24 Template/Events/view.ctp:10
+msgid "Edit Event"
+msgstr "Editar evento"
+
+#: Template/Events/index.ctp:16
+msgid "Events"
+msgstr "Eventos"
+
+#: Template/Events/view.ctp:11
+msgid "Delete Event"
+msgstr "Eliminar evento"
+
+#: Template/Events/view.ctp:22
+msgid "Asset"
+msgstr "Activo"
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr "Error"
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr "atrás"
+
+#: Template/Tags/add.ctp:18
+msgid "Add Tag"
+msgstr "Añadir etiqueta"
+
+#: Template/Tags/edit.ctp:24 Template/Tags/view.ctp:10
+msgid "Edit Tag"
+msgstr "Editar etiqueta"
+
+#: Template/Tags/index.ctp:16
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: Template/Tags/view.ctp:11
+msgid "Delete Tag"
+msgstr "Eliminar etiqueta"
+
+#: Template/Tags/view.ctp:39 Template/Users/view.ctp:43
+msgid "Related Assets"
+msgstr "Activos relacionados"
+
+#: Template/Tags/view.ctp:44 Template/Users/view.ctp:48
+msgid "User Id"
+msgstr "ID de usuario"
+
+#: Template/Users/add.ctp:18
+msgid "Add User"
+msgstr "Agregar usuario"
+
+#: Template/Users/edit.ctp:24 Template/Users/view.ctp:10
+msgid "Edit User"
+msgstr "editar usuario"
+
+#: Template/Users/index.ctp:16
+msgid "Users"
+msgstr "Los usuarios"
+
+#: Template/Users/view.ctp:11
+msgid "Delete User"
+msgstr "Borrar usuario"
+
+#: Template/Users/view.ctp:22
+msgid "Email"
+msgstr "Email"
+
+#: Template/Users/view.ctp:26
+msgid "Password"
+msgstr "Contraseña"
+
