@@ -60,6 +60,11 @@ class PaysController extends AppController
         $this->set(compact('pay'));
     }
 
+    public function isAuthorized($user) {
+        // All actions are allowed to logged in users for subcategories.
+        return true;
+    }
+
     /**
      * Edit method
      *

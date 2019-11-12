@@ -12,6 +12,28 @@ use App\Controller\AppController;
  */
 class VillesController extends AppController
 {
+
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['getByCategory']);
+    }
+
+    public function isAuthorized($user) {
+        // All actions are allowed to logged in users for subcategories.
+        return true;
+    }
+
+    public function getByCategory() {
+        $pays_id = $this->request->query('pays_id');
+
+        $villes = $this->Villes->find('all', [
+            'conditions' => ['Villes.pays_id' => $pays_id],
+        ]);
+        $this->set('villes', $villes);
+        $this->set('_serialize', ['villes']);
+    }
+
+    
     /**
      * Index method
      *
@@ -19,6 +41,9 @@ class VillesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Pays']
+        ];
         $villes = $this->paginate($this->Villes);
 
         $this->set(compact('villes'));
@@ -34,7 +59,7 @@ class VillesController extends AppController
     public function view($id = null)
     {
         $ville = $this->Villes->get($id, [
-            'contain' => []
+            'contain' => ['Pays', 'Assets']
         ]);
 
         $this->set('ville', $ville);
@@ -57,7 +82,8 @@ class VillesController extends AppController
             }
             $this->Flash->error(__('The ville could not be saved. Please, try again.'));
         }
-        $this->set(compact('ville'));
+        $pays = $this->Villes->Pays->find('list', ['limit' => 200]);
+        $this->set(compact('ville', 'pays'));
     }
 
     /**
@@ -81,7 +107,8 @@ class VillesController extends AppController
             }
             $this->Flash->error(__('The ville could not be saved. Please, try again.'));
         }
-        $this->set(compact('ville'));
+        $pays = $this->Villes->Pays->find('list', ['limit' => 200]);
+        $this->set(compact('ville', 'pays'));
     }
 
     /**

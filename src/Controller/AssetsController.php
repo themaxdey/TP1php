@@ -64,9 +64,24 @@ class AssetsController extends AppController
             }
             $this->Flash->error(__('The asset could not be saved. Please, try again.'));
         }
+
+        // Bâtir la liste des catégories  
+        $this->loadModel('Pays');
+        $pays = $this->Pays->find('list', ['limit' => 200]);
+
+        // Extraire le id de la première catégorie
+        $pays = $pays->toArray();
+        reset($pays);
+        $pays_id = key($pays);
+
+        // Bâtir la liste des sous-catégories reliées à cette catégorie
+        $villes = $this->Assets->Villes->find('list', [
+            'conditions' => ['Villes.pays_id' => $pays_id],
+        ]);
+
         $markets = $this->Assets->Markets->find('list', ['limit' => 200]);
         $tags = $this->Assets->Tags->find('list', ['limit' => 200]);
-        $this->set(compact('asset', 'markets', 'tags'));
+        $this->set(compact('asset','pays','villes', 'markets', 'tags'));
     }
 
     /**
@@ -123,7 +138,7 @@ class AssetsController extends AppController
         $action = $this->request->getParam('action');
         // Les actions 'add' et 'tags' sont toujours autorisés pour les utilisateur
         // authentifiés sur l'application
-        if (in_array($action, ['add', 'tags'])) {
+        if (in_array($action, ['add', 'edit', 'delete', 'tags'])) {
             return true;
         }
 

@@ -1,4 +1,24 @@
 <?php
+$urlToLinkedListFilter = $this->Url->build([
+    "controller" => "Villes",
+    "action" => "getByCategory",
+    "_ext" => "json"
+        ]);
+echo $this->Html->scriptBlock('var urlToLinkedListFilter = "' . $urlToLinkedListFilter . '";', ['block' => true]);
+echo $this->Html->script('Assets/add', ['block' => 'scriptBottom']);
+?>
+
+<?php
+$urlToGenresAutocompletedemoJson = $this->Url->build([
+    "controller" => "Genres",
+    "action" => "findGenres",
+    "_ext" => "json"
+        ]);
+echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToGenresAutocompletedemoJson . '";', ['block' => true]);
+echo $this->Html->script('Genres/autocompletedemo', ['block' => 'scriptBottom']);
+?>
+
+<?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Asset $asset
@@ -31,7 +51,7 @@
             echo $this->Form->control('title');
             echo $this->Form->control('slug');
             echo $this->Form->control('body');
-            echo $this->Form->control('serviceField');
+            echo $this->Form->input('serviceField', ['id' => 'autocomplete']);
             echo $this->Form->control('type');
             echo $this->Form->control('tags._ids', ['options' => $tags]);
         ?>

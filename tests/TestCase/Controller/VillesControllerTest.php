@@ -20,7 +20,9 @@ class VillesControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Villes'
+        'app.Villes',
+        'app.Pays',
+        'app.Assets'
     ];
 
     /**

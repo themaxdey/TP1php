@@ -7,8 +7,11 @@ use Cake\ORM\Entity;
  * Ville Entity
  *
  * @property int $id
- * @property int $id_pays
+ * @property int $pays_id
  * @property string $name
+ *
+ * @property \App\Model\Entity\Pay $pay
+ * @property \App\Model\Entity\Asset[] $assets
  */
 class Ville extends Entity
 {
@@ -22,7 +25,9 @@ class Ville extends Entity
      * @var array
      */
     protected $_accessible = [
-        'id_pays' => true,
-        'name' => true
+        'pays_id' => true,
+        'name' => true,
+        'pay' => true,
+        'assets' => true
     ];
 }

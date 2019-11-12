@@ -33,6 +33,11 @@ class PaysTable extends Table
         $this->setTable('pays');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Villes', [
+            'foreignKey' => 'pays_id'
+        ]);
+
     }
 
     /**

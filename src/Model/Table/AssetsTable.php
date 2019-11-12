@@ -42,6 +42,10 @@ class AssetsTable extends Table
 
         $this->addBehavior('Timestamp');
 
+        $this->belongsTo('Villes', [
+            'foreignKey' => 'Villes_id'
+        ]);
+
         $this->belongsTo('Markets', [
             'foreignKey' => 'market_id'
         ]);
