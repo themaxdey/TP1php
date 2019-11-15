@@ -17,9 +17,7 @@
  * @link          https://cakephp.org CakePHP(tm) Project
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-//use Cake\Http\Middleware\CsrfProtectionMiddleware;
-
-use Cake\Core\Plugin;
+use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
@@ -49,26 +47,17 @@ Router::extensions(['json', 'xml']);
  */
 Router::defaultRouteClass(DashedRoute::class);
 
-Router::prefix('api', function ($routes) {
-    $routes->extensions(['json', 'xml']);
-    $routes->resources('Markets');
-    $routes->resources('Users');
-    Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
-    $routes->fallbacks('InflectedRoute');
-});
-
-Router::prefix('Admin', function ($routes) {
-    $routes->fallbacks('InflectedRoute');
-});
-
-
-Router::scope('/', function ($routes) {
+Router::scope('/', function (RouteBuilder $routes) {
+    // Register scoped middleware for in scopes.
+    $routes->registerMiddleware('csrf', new CsrfProtectionMiddleware([
+        'httpOnly' => true
+    ]));
 
     /**
      * Apply a middleware to the current route scope.
      * Requires middleware to be registered via `Application::routes()` with `registerMiddleware()`
      */
-    //$routes->applyMiddleware('csrf');
+    $routes->applyMiddleware('csrf');
 
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
@@ -76,7 +65,6 @@ Router::scope('/', function ($routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Assets', 'action' => 'index']);
-
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
@@ -116,5 +104,3 @@ Router::scope('/', function ($routes) {
  * });
  * ```
  */
-
-Plugin::routes();
