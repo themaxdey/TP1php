@@ -29,7 +29,7 @@ function convertFormToJSON(form) {
     var json = {};
 
     $.each(array, function () {
-        json[this.type] = this.value || ''; /// PAS SURE
+        json[this.type] = this.value || '';
     });
 
     return json;

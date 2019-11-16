@@ -12,6 +12,15 @@ class MarketsController extends AppController {
         $this->viewBuilder()->setLayout('monopage');
     }
 
+    public function index()
+    {
+        $markets = $this->paginate($this->Markets);
+
+        $this->set(compact('markets'));
+    }
+
+
+
     public $paginate = [
         'page' => 1,
         'limit' => 5,

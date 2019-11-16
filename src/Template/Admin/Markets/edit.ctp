@@ -17,8 +17,7 @@ $this->start('tb_actions');
         )
     ?></li>
     <li><?= $this->Html->link(__('List Markets'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Assets'), ['controller' => 'Assets', 'action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('New Asset'), ['controller' => 'Assets', 'action' => 'add']) ?></li>
+
 
 <?php
 $this->end();
@@ -33,8 +32,7 @@ $this->start('tb_sidebar');
         )
     ?></li>
     <li><?= $this->Html->link(__('List Markets'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Assets'), ['controller' => 'Assets', 'action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('New Asset'), ['controller' => 'Assets', 'action' => 'add']) ?></li>
+
 </ul>
 <?php
 $this->end();

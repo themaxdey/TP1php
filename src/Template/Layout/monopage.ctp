@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -16,7 +17,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
+
     <head>
         <?= $this->Html->charset() ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,15 +42,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
         <?php
-        echo $this->Html->script([
-            'https://code.jquery.com/jquery-1.12.4.js',
-            'https://code.jquery.com/ui/1.12.1/jquery-ui.js',
-            'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'
-                ], ['block' => 'scriptLibraries']
+        echo $this->Html->script(
+            [
+                'https://code.jquery.com/jquery-1.12.4.js',
+                'https://code.jquery.com/ui/1.12.1/jquery-ui.js',
+                'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'
+            ],
+            ['block' => 'scriptLibraries']
         );
         ?>
     </head>
 </head>
+
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
@@ -57,6 +63,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </ul>
         <div class="top-bar-section">
             <ul class="right">
+                <li><?=
+                        $this->Html->link('Section Admin en PHP', [
+                            'prefix' => 'admin',
+                            'controller' => 'Markets',
+                            'action' => 'index'
+                        ]);
+                    ?>
+                </li>
                 <li>
                     <?php
                     $loguser = $this->request->session()->read('Auth.User');
@@ -75,14 +89,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         ]);
                     ?>
                 </li>
-                <li><?=
-                        $this->Html->link('Autocomplete', [
-                            'controller' => 'Genres',
-                            'action' => 'autocompletedemo'
-                        ]);
-                    ?>
-                </li>
-
 
                 <li>
                     <?= $this->Html->link('Français', ['action' => 'changeLang', 'fr_CA'], ['escape' => false]) ?>
@@ -114,4 +120,5 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script'); ?>
     <?= $this->fetch('scriptBottom') ?>
 </body>
+
 </html>

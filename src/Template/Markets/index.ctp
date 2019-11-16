@@ -6,7 +6,7 @@
 ?>
 
 <?php
-$urlToRestApi = $this->Url->build('/api/markets', true);
+$urlToRestApi = $this->Url->build('/api/Markets', true);
 echo $this->Html->scriptBlock('var urlToRestApi = "' . $urlToRestApi . '";', ['block' => true]);
 echo $this->Html->script('Markets/index', ['block' => 'scriptBottom']);
 ?>

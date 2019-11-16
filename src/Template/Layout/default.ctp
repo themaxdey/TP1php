@@ -78,14 +78,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         ]);
                     ?>
                 </li>
-                <li><?=
-                        $this->Html->link('Autocomplete', [
-                            'controller' => 'Genres',
-                            'action' => 'autocompletedemo'
-                        ]);
-                    ?>
-                </li>
-
 
                 <li>
                     <?= $this->Html->link('Français', ['action' => 'changeLang', 'fr_CA'], ['escape' => false]) ?>

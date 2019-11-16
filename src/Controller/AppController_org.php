@@ -1,5 +1,4 @@
 <?php
-
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -13,12 +12,11 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
-
 namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-use Cake\I18n\I18n;
+
 /**
  * Application Controller
  *
@@ -42,56 +40,33 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-        I18n::setLocale($this->request->session()->read('Config.language'));
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
+
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
-        $this->loadComponent('Auth', [
-            'authorize'=> 'Controller',
-            'authenticate' => [
-                'Form' => [
-                    'fields' => [
-                        'username' => 'email',
-                        'password' => 'password'
-                    ]
-                ]
-            ],
-            'loginAction' => [
-                'controller' => 'Users',
-                'action' => 'login'
-            ],
-            // Si pas autorisé, on renvoit sur la page précédente
-            'unauthorizedRedirect' => $this->referer()
-        ]);
-
-        // Permet à l'action "display" de notre PagesController de continuer
-        // à fonctionner. Autorise également les actions "read-only".
-        $this->Auth->allow(['display', 'view', 'index', 'changelang', 'apropos']);
-    }
-
-    public function isAuthorized($user)
-    {
-        // Par défaut, on refuse l'accès.
-        return false;
-    }
-
-    public function changeLang($lang = 'en_US') {
-        I18n::setLocale($lang);
-        $this->request->session()->write('Config.language', $lang);
-        return $this->redirect($this->request->referer());
-    }
-
-    public function apropos() {
-       
-        echo $this->Html->link("/html/apropos.html");
-    }
-
-
-    /*
-         * Enable the following component for recommended CakePHP security settings.
+        /*
+         * Enable the following components for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
-    //$this->loadComponent('Security');
+        //$this->loadComponent('Security');
+        //$this->loadComponent('Csrf');
+    }
+
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return \Cake\Http\Response|null|void
+     */
+    public function beforeRender(Event $event)
+    {
+        // Note: These defaults are just to get started quickly with development
+        // and should not be used in production. You should instead set "_serialize"
+        // in each action as required.
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+            in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
+    }
 }

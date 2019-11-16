@@ -12,8 +12,7 @@ $this->start('tb_actions');
 ?>
 
     <li><?= $this->Html->link(__('New Market'), ['action' => 'add']) ?></li>
-    <li><?= $this->Html->link(__('List Assets'), ['controller' => 'Assets', 'action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('New Asset'), ['controller' => 'Assets', 'action' => 'add']) ?></li>
+
 
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>

@@ -17,8 +17,7 @@ $this->start('tb_actions');
 <li><?= $this->Form->postLink(__('Delete Market'), ['action' => 'delete', $market->id], ['confirm' => __('Are you sure you want to delete # {0}?', $market->id)]) ?> </li>
 <li><?= $this->Html->link(__('List Markets'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New Market'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Assets'), ['controller' => 'Assets', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Asset'), ['controller' => 'Assets', 'action' => 'add']) ?> </li>
+
 <li><?=
         $this->Html->link('Section publique en JS', [
             'prefix' => false,
