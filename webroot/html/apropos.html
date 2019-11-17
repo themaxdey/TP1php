@@ -11,21 +11,26 @@
 
 		<h1>À propos</h1>
 
-		<p>Maxime Dery </br> 420-5B7 MO Applications Internet. </br> </p>
+		<p>Maxime Dery <br> 420-267 MO Développer un site Web et une application pour Internet. Automne 2019, Collège Montmorency. </br> </p>
+
+		<p>Liens vers mon dépot github: <a href="https://github.com/themaxdey/TP1php">vers github </a></p> 
+
+		<p>Liens vers le modele: <a href="http://www.databaseanswers.org/data_models/asset_management/index.htm">vers modele </a></p> 
 
 		<img src="../img/designerBD.png"></br>
 
-		<a href="http://www.databaseanswers.org/data_models/asset_management/index.htm">lien vers le modele</a>
-		</br>
+		
 
 		<p>
-			<h3> Fonctionnement du site </h3>
+			<h3>Étapes d'utilisation typiques</h3>
 			<ul>
-				<li> Création des types de marché </li>
-				<li> Création d'une action </li>
-				<li> Ajout d'une image</li>
-				<li> Création d'une compagnie</li>
-				<li> Ajout de l'image sur la compangnie</li>			
+				<li>aller sur "http://localhost/TP1php/markets" pour avoir accès a la monopage Ajax avec la lecture, la l'ajout et la suppretion en ajax.</li>
+				<li>le routage admin et toutes ses fonctionnalitées sont disponnible en appuyant sur "Section admin en PHP" dans la bar de haut</li>
+				<li>le bootsrap est fonctionnel sur les page roomtype et admin/roomtype mais il faut l'activée en mettant en commentaire "parent::initialize();" et en décommentant "$this->initializeUI();" dans le fichier appview</li>
+				<li>en activant le boostrap, toutes page ne l'utilisant pas n'ont plus de theme. Pour le changer, désactiver bootsrap en faisant l'inverse de la dernière etape</li>
+				<li>l'autocomplete est disponible sur "http://localhost/TP1php/assets/add" sur le champ Roomtype</li>
+				<li>les listes liées sont disponnibles sur "http://localhost/TP1php/assets/add"</li>
+				<li>la fonctionnalité pdf est disponnible sur "http://localhost/TP1php/assets"</li>
 			</ul>
 		</p>
 
