@@ -45,6 +45,7 @@
                 <td><?= h($asset->type) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $asset->id]) ?>
+                    <?= $this->Html->link('(pdf)', ['action' => 'view', $asset->id . '.pdf']) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $asset->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $asset->id], ['confirm' => __('Are you sure you want to delete # {0}?', $asset->id)]) ?>
                 </td>

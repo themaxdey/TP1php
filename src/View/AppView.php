@@ -39,7 +39,7 @@ class AppView extends View
      */
     public function initialize()
     {
-        $this->initializeUI();
-        //parent::initialize();
+        //$this->initializeUI();
+        parent::initialize();
     }
 }
