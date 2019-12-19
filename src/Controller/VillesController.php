@@ -23,14 +23,22 @@ class VillesController extends AppController
         return true;
     }
 
-    public function getByCategory() {
+    public function getByPays() {
         $pays_id = $this->request->query('pays_id');
 
         $villes = $this->Villes->find('all', [
             'conditions' => ['Villes.pays_id' => $pays_id],
         ]);
-        $this->set('villes', $villes);
+        $this->set('villes',$villes);
         $this->set('_serialize', ['villes']);
+    }
+    
+        public function getVillesSortedByPays() {
+        $pays = $this->Villes->Pays->find('all', [
+            'contain' => ['Villes'],
+        ]);
+        $this->set('pays',$pays);
+        $this->set('_serialize', ['pays']);
     }
 
     

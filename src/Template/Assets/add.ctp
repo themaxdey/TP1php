@@ -1,7 +1,7 @@
 <?php
 $urlToLinkedListFilter = $this->Url->build([
-    "controller" => "Villes",
-    "action" => "getByCategory",
+    "controller" => "Pays",
+    "action" => "getPays",
     "_ext" => "json"
         ]);
 echo $this->Html->scriptBlock('var urlToLinkedListFilter = "' . $urlToLinkedListFilter . '";', ['block' => true]);
@@ -9,52 +9,71 @@ echo $this->Html->script('Assets/add', ['block' => 'scriptBottom']);
 ?>
 
 <?php
-$urlToGenresAutocompletedemoJson = $this->Url->build([
-    "controller" => "Genres",
-    "action" => "findGenres",
-    "_ext" => "json"
-        ]);
-echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToGenresAutocompletedemoJson . '";', ['block' => true]);
-echo $this->Html->script('Genres/autocompletedemo', ['block' => 'scriptBottom']);
-?>
-
-
-<?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Asset $asset
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Assets'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Markets'), ['controller' => 'Markets', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Market'), ['controller' => 'Markets', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Villes'), ['controller' => 'Villes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Villes'), ['controller' => 'Villes', 'action' => 'add']) ?></li>
+<?php
+    $this->start('tb_actions');
+?>
+<li><?= $this->Html->link(__('List Assets'), ['action' => 'index']) ?></li>
+<li><?= $this->Html->link(__('List Markets'), ['controller' => 'Markets', 'action' => 'index']) ?></li>
+<li><?= $this->Html->link(__('New Market'), ['controller' => 'Markets', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
+<li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
+<li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
+<li><?= $this->Html->link(__('List Villes'), ['controller' => 'Villes', 'action' => 'index']) ?></li>
+<li><?= $this->Html->link(__('New Villes'), ['controller' => 'Villes', 'action' => 'add']) ?></li>
+<?php
+    $this->end();
+?>
+
+<div class="dropdown hidden-xs">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <?= __("Actions") ?>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <?= $this->fetch('tb_actions') ?>
     </ul>
-</nav>
-<div class="assets form large-9 medium-8 columns content">
+</div>
+
+
+<div class="assets form large-9 medium-8 columns content" ng-app="linkedlists" ng-controller="paysController">
     <?= $this->Form->create($asset) ?>
     <fieldset>
         <legend><?= __('Add Asset') ?></legend>
-        <?php
-            echo $this->Form->control('pays_id', ['options' => $pays]);
-            echo $this->Form->control('villes_id', ['options' => $villes]);
-            echo $this->Form->control('market_id', ['options' => $markets, 'empty' => true]);
-            echo $this->Form->control('title');
-            echo $this->Form->control('slug');
-            echo $this->Form->control('body');
-            echo $this->Form->input('serviceField', ['id' => 'autocomplete']);
-            echo $this->Form->control('type');
-            echo $this->Form->control('tags._ids', ['options' => $tags]);
-        ?>
+        <div>
+            Pays:
+            <select name="pays_id" id="pays-id" ng-model="pays" ng-options="pays.name for pays in pays track by pays.id">
+                <option value=''>Select</option>
+            </select>
+        </div>
+        <div>
+            Villes:
+            <select name="ville_id" id="ville-id" ng-disabled="!pays" ng-model="ville" ng-options="ville.name for ville in pays.villes track by pays.id">
+                <option value=''>Select</option>
+            </select>
+        </div>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Save Asset')) ?>
     <?= $this->Form->end() ?>
+
+    <div id="example1"></div> 
+<p style="color:red;">{{ captcha_status }}</p>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+async defer></script>
+
+<script>
+    var onloadCallback = function() {
+        widgetId1 = grecaptcha.render('example1', {
+            'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+            'theme' : 'dark'
+        });
+    };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+async defer>
 </div>

@@ -38,8 +38,9 @@ class AssetsController extends AppController
     public function view($id = null)
     {
         $asset = $this->Assets->get($id, [
-            'contain' => ['Markets', 'Tags', 'Events']
+            'contain' => ['Markets', 'Villes']
         ]);
+
 
         $this->set('asset', $asset);
     }

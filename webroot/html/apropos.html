@@ -22,16 +22,28 @@
 		
 
 		<p>
-			<h3>Étapes d'utilisation typiques</h3>
+			<h3>Étapes d'utilisation typiques (déprécier)</h3>
 			<ul>
-				<li>aller sur "http://localhost/TP1php/markets" pour avoir accès a la monopage Ajax avec la lecture, la l'ajout et la suppretion en ajax.</li>
+				<li>aller sur "http://localhost/TP1php/assets" pour avoir accès a la monopage Ajax avec la lecture, la l'ajout et la suppretion en ajax.</li>
 				<li>le routage admin et toutes ses fonctionnalitées sont disponnible en appuyant sur "Section admin en PHP" dans la bar de haut</li>
 				<li>le bootsrap est fonctionnel sur les page roomtype et admin/roomtype mais il faut l'activée en mettant en commentaire "parent::initialize();" et en décommentant "$this->initializeUI();" dans le fichier appview</li>
 				<li>en activant le boostrap, toutes page ne l'utilisant pas n'ont plus de theme. Pour le changer, désactiver bootsrap en faisant l'inverse de la dernière etape</li>
-				<li>l'autocomplete est disponible sur "http://localhost/TP1php/assets/add" sur le champ Roomtype</li>
+				<li>l'autocomplete est disponible sur "http://localhost/TP1php/assets/add" sur le champ Service Field</li>
 				<li>les listes liées sont disponnibles sur "http://localhost/TP1php/assets/add"</li>
 				<li>la fonctionnalité pdf est disponnible sur "http://localhost/TP1php/assets"</li>
 			</ul>
+			<h3>Tp3 - intégration angular</h3>
+			<ul>
+				<li>Allez sur "http://localhost/TP1php/" pour visionner les assets</li>
+				<li>Rajouter un assets avec le menu déroullant avec l'action (new asset) </li>
+				<li>Lorsqu'on ajoute un asset, les pays et villes forment une liste liée</li>
+				<li>Le capchat permet de rajouter une sécuriter supplémentaire à l'ajout d'assets (note: l'ajout ne fonctionne pas et le glisser d'image est manquant)</li>
+				<li>Les opérations CRUD sont manquantes et serait normalement dans l'index de asset</li>
+				<li>L'authentification avec le Jeton JTW de angular permet également une sécurité plus profonde sur le site. </li>
+			</ul>
+
+			<h4>Note:</h4>
+			Le view génère une erreur SQL
 		</p>
 
 

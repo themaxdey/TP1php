@@ -4,8 +4,12 @@
  * @var \App\Model\Entity\Asset[]|\Cake\Collection\CollectionInterface $assets
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <?= __('Actions') ?>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Asset'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Markets'), ['controller' => 'Markets', 'action' => 'index']) ?></li>
@@ -17,7 +21,38 @@
         <li><?= $this->Html->link(__('List Villes'), ['controller' => 'Villes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ville'), ['controller' => 'Villes', 'action' => 'add']) ?></li>
     </ul>
-</nav>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3><?= __('Assets') ?></h3>  
+        </div>
+        <div class="row">
+            <?php foreach ($assets as $asset): ?> 
+                <div class="col-lg-2">
+                    <h3><?= $this->Html->link(h($asset->title), ['action' => 'view', $asset->id]) ?></h3>
+                
+                   
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <?= __('Actions') ?>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li></li>
+                            <li><?= $this->Html->link(__('Edit'), ['action' => 'edit', $asset->id]) ?></li>
+                            <li><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $asset->id], ['confirm' => __('Are you sure you want to delete # {0}?', $asset->id)]) ?></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php
+            endforeach;
+            ?>
+        </div>
+
+    </div>
+
 <div class="assets index large-9 medium-8 columns content">
     <h3><?= __('Assets') ?></h3>
     <table cellpadding="0" cellspacing="0">

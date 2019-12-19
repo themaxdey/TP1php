@@ -71,9 +71,13 @@ class AppController extends Controller
         $this->Auth->allow(['display', 'view', 'index', 'changelang', 'apropos']);
     }
 
-    public function isAuthorized($user)
-    {
-        // Par défaut, on refuse l'accès.
+    public function isAuthorized($user) {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+
+        // Default deny
         return false;
     }
 
@@ -86,6 +90,22 @@ class AppController extends Controller
     public function apropos() {
        
         echo $this->Html->link("/html/apropos.html");
+    }
+
+    public function beforeRender(Event $event) {
+        // Note: These defaults are just to get started quickly with development
+        // and should not be used in production. You should instead set "_serialize"
+        // in each action as required.
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+                in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
+
+    }
+
+    public function beforeFilter(Event $event) {
+        $this->Auth->allow(['index', 'view', 'display', 'getByPays', 'getVillesSortedByPays', 'getPays']);
     }
 
 
